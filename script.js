@@ -26,7 +26,7 @@ wins.forEach(e=>{
     if((boxtext[e[0]].innerText===boxtext[e[1]].innerText) && (boxtext[e[1]].innerText===boxtext[e[2]].innerText) && (boxtext[e[0]].innerText!=='')){
         
         document.querySelector('.info').innerText=boxtext[e[0]].innerText+" won";
-        // isgameover=true;
+        isgameover=true;
         document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width="200px"
         music.play();
         }
@@ -52,7 +52,7 @@ wins.forEach(e=>{
 
     let reset=document.getElementById("reset");
     reset.addEventListener('click',()=>{
-        // music.pause();
+        music.pause();
         let boxtexts=document.querySelectorAll('.boxtext');
         Array.from(boxtexts).forEach(element=>{
             element.innerText="";
@@ -60,9 +60,10 @@ wins.forEach(e=>{
         turn="X";
         isgameover=false;
         document.getElementsByClassName("info")[0].innerText="Turn for" + turn;
-        document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width="0px"
+        document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width="200px"
 
     })
+
 
 
 // Game logic
